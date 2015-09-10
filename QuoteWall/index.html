@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-resource.min.js"></script>-->
+
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-resource.min.js"></script>
+    <script src="lib/jquery-1.11.1.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <link href="app/styles/speech-bubble-sample.css" rel="stylesheet" />
+    <link href="app/styles/app.css" rel="stylesheet" />
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="lib/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
+    
+    <title>Quote Wall</title>
+</head>
+<body class="">
+
+    <div class="container">
+        <div ng-app="quote-wall-app" ng-controller="QuoteController">
+            <h1>Acquisitions Team Quote Wall</h1>
+            <div>
+                <form id="quote-form">
+                    <input id="new-quote" placeholder="Amazing quote goes here..." ng-model="newQuote.quoteText" ng-disabled="saving" autofocus>
+                    <input id="new-quoter" placeholder="Team member goes here..." ng-model="newQuote.quoter" ng-disabled="saving" autofocus>
+                    <input type="submit" ng-click="addQuote(newQuote)" value="Add" />
+                </form>
+            </div>
+
+            <div >
+                <div ng-repeat="quote in quotes">
+                    <div class="row">
+                        <div class="col-md-4" row-vertical-center">
+                            <div class="example-twitter">
+                                <p ng-bind="quote.QuoteText" />
+                            </div>
+                        </div>
+                        <div class="col-md-8 row-vertical-center">
+                            {{quote.Quoter}}
+                            <!--{{quote.dateadded | date:'mm/dd/yyyy'}}-->
+                            {{quote.Rating}}
+                            <button class="btn btn-default" ng-click="voteUp(quote)">
+                                <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+                            </button>
+                            <button class="btn btn-default" ng-click="voteDown(quote)">
+                                <span class="glyphicon glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Status: {{status}}</p>
+        </div>
+    </div>
+    
+    <script src="app/quote-service.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>

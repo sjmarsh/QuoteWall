@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteWall", "QuoteWall\QuoteWall.csproj", "{D49A9AA8-733C-4360-AFC5-F6C5489B3E99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuoteWall.Test", "QuoteWall.Test\QuoteWall.Test.csproj", "{86EE43F8-C98B-40E8-AA8E-0124909B5458}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D49A9AA8-733C-4360-AFC5-F6C5489B3E99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49A9AA8-733C-4360-AFC5-F6C5489B3E99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49A9AA8-733C-4360-AFC5-F6C5489B3E99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49A9AA8-733C-4360-AFC5-F6C5489B3E99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86EE43F8-C98B-40E8-AA8E-0124909B5458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EE43F8-C98B-40E8-AA8E-0124909B5458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EE43F8-C98B-40E8-AA8E-0124909B5458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EE43F8-C98B-40E8-AA8E-0124909B5458}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
