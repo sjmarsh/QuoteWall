@@ -37,7 +37,14 @@ namespace QuoteWall.Controllers
         [Route("api/quotes")]
         public Guid Post(Quote quote)
         {
-            return _quoteRepository.Save(quote);
+            return _quoteRepository.Create(quote);
+        }
+
+        [HttpPut]
+        [Route("api/quotes")]
+        public void Put(Quote quote)
+        {
+            _quoteRepository.Update(quote);
         }
 
         [HttpDelete]

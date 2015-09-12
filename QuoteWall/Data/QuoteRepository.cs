@@ -1,4 +1,5 @@
-﻿using Raven.Client;
+﻿using AutoMapper;
+using Raven.Client;
 using QuoteWall.Models;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace QuoteWall.Data
     {
         IEnumerable<Quote> All();
         Quote Retrieve(Guid id);
-        Guid Save(Quote quote);
+        Guid Create(Quote quote);
+        void Update(Quote quote);
         void Delete(Guid id);
     }
 
@@ -34,11 +36,27 @@ namespace QuoteWall.Data
             return _session.Load<Quote>(id);
         }
 
-        public Guid Save(Quote quote)
+        public Guid Create(Quote quote)
         {
             _session.Store(quote);
             _session.SaveChanges();
             return quote.Id;
+        }
+
+        public void Update(Quote quote)
+        {
+            var existingQuote = _session.Load<Quote>(quote.Id);
+            if(existingQuote != null)
+            {
+                Mapper.CreateMap<Quote, Quote>();
+                Mapper.Map(quote, existingQuote);
+
+                _session.SaveChanges();
+            }
+            else
+            {
+                throw new ArgumentException(string.Format("Quote {0} not found.", quote.Id));
+            }
         }
 
         public void Delete(Guid id)

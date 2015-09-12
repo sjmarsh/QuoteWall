@@ -16,14 +16,10 @@
       };
 
       this.updateQuote = function (quote) {
-        return $http.post(urlBase, quote);
+        return $http.put(urlBase, quote);
       };
 
       this.deleteQuote = function (id) {
         return $http.delete(urlBase + '/' + id);
       };
-
-      //this.getOrders = function (id) {
-      //  return $http.get(urlBase + '/' + id + '/orders');
-      //};
     }]);

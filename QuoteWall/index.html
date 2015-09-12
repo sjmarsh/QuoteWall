@@ -30,17 +30,16 @@
             </div>
 
             <div >
-                <div ng-repeat="quote in quotes">
+                <div ng-repeat="quote in quotes | orderBy:'-Rating'">
                     <div class="row">
-                        <div class="col-md-4" row-vertical-center">
+                        <div >
                             <div class="example-twitter">
                                 <p ng-bind="quote.QuoteText" />
                             </div>
                         </div>
-                        <div class="col-md-8 row-vertical-center">
+                        <div style="text-align:right">
                             {{quote.Quoter}}
-                            <!--{{quote.dateadded | date:'mm/dd/yyyy'}}-->
-                            {{quote.Rating}}
+                            <p class="badge">{{quote.Rating}}</p>
                             <button class="btn btn-default" ng-click="voteUp(quote)">
                                 <span class="glyphicon glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
                             </button>

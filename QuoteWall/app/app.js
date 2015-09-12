@@ -31,20 +31,24 @@
 
     $scope.voteUp = function (quote) {
       quote.Rating++;
+      QuoteService.updateQuote(quote)
+        .success(function () {
+        })
+        .error(function () {
+          $scope.status = "Error saving Quote Rating";
+        });
     };
 
     $scope.voteDown = function (quote) {
       quote.Rating--;
+      QuoteService.updateQuote(quote)
+        .success(function () {
+        })
+        .error(function () {
+          $scope.status = "Error saving Quote Rating";
+        });
     }
-
-    $scope.showQuoteDetail = function(id){
-      getQuote(id); 
-    };
-
-    $scope.hideQuoteDetail = function(){
-      $scope.detailVisible = false;
-    };
-      
+         
     function getQuotes() {
       QuoteService.getQuotes()
         .success(function (quotes) {
