@@ -52,6 +52,10 @@
     function getQuotes() {
       QuoteService.getQuotes()
         .success(function (quotes) {
+          quotes = quotes.sort(function(a, b){
+            return b.Rating - a.Rating;
+          })
+
           $scope.quotes = quotes;
         })
         .error(function (error) {

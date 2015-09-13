@@ -20,7 +20,7 @@
 
     <div class="container">
         <div ng-app="quote-wall-app" ng-controller="QuoteController">
-            <h1>Acquisitions Team Quote Wall</h1>
+            <h1>Team Quote Wall</h1>
             <div>
                 <form id="quote-form">
                     <input id="new-quote" placeholder="Amazing quote goes here..." ng-model="newQuote.quoteText" ng-disabled="saving" autofocus>
@@ -30,14 +30,14 @@
             </div>
 
             <div >
-                <div ng-repeat="quote in quotes | orderBy:'-Rating'">
+                <div ng-repeat="quote in quotes">
                     <div class="row">
                         <div >
                             <div class="talk-bubble tri-right round btm-left">
                                 <p class="talktext-quote" ng-bind="quote.QuoteText" />
                             </div>
                         </div>
-                        <div>
+                        <div class="voting-detail">
                             {{quote.Quoter}}
                             <p class="badge">{{quote.Rating}}</p>
                             <button class="btn btn-default" ng-click="voteUp(quote)">
@@ -50,7 +50,7 @@
                     </div>
                 </div>
             </div>
-            <p>Status: {{status}}</p>
+            <p>{{status}}</p>
         </div>
     </div>
     

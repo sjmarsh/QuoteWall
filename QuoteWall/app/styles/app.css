@@ -2,8 +2,6 @@
   
 }
 
-.row-vertical-center{
-  display: inline-block;
-  vertical-align: middle;
-  float: none;
+.voting-detail{
+  margin-left:40px;
 }
