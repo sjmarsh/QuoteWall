@@ -9,7 +9,7 @@
     <script src="lib/angular-resource.min.js"></script>
     <script src="lib/jquery-1.11.1.js"></script>
     <script src="lib/bootstrap/js/bootstrap.js"></script>
-    <link href="app/styles/speech-bubble-sample.css" rel="stylesheet" />
+    <link href="app/styles/speech-bubbles.css" rel="stylesheet" />
     <link href="app/styles/app.css" rel="stylesheet" />
     <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="lib/bootstrap/css/bootstrap-theme.css" rel="stylesheet" />
@@ -33,11 +33,11 @@
                 <div ng-repeat="quote in quotes | orderBy:'-Rating'">
                     <div class="row">
                         <div >
-                            <div class="example-twitter">
-                                <p ng-bind="quote.QuoteText" />
+                            <div class="talk-bubble tri-right round btm-left">
+                                <p class="talktext-quote" ng-bind="quote.QuoteText" />
                             </div>
                         </div>
-                        <div style="text-align:right">
+                        <div>
                             {{quote.Quoter}}
                             <p class="badge">{{quote.Rating}}</p>
                             <button class="btn btn-default" ng-click="voteUp(quote)">

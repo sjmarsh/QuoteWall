@@ -142,7 +142,7 @@
     <Content Include="app\app.js" />
     <Content Include="app\quote-service.js" />
     <Content Include="app\styles\app.css" />
-    <Content Include="app\styles\speech-bubble-sample.css" />
+    <Content Include="app\styles\speech-bubbles.css" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="lib\angular-resource.min.js" />
